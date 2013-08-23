@@ -134,6 +134,7 @@ static int lua_winalttab_list(lua_State *L){ /* {{{ */
 
 static int lua_winalttab_activate(lua_State *L){ /* {{{ */
   HWND hwnd = (HWND)luaL_checkinteger(L, 1);
+  ShowWindow(hwnd, SW_SHOWNORMAL);
   SetForegroundWindow(hwnd);
   SetActiveWindow(hwnd);
   return 0;
